@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios')
 
 function ranDom (arr) {
     var index = Math.floor(Math.random()*arr.length);
@@ -6,14 +6,15 @@ function ranDom (arr) {
 }
 
 module.exports = {
-    fetchRandomItem: function (item) {
-        var encodedURI = window.encodeURI('https://api.xivdb.com/item/' + ranDom(item));
+    fetchItems: function (item) {
+        var encodedURI = window.encodeURI('https://api.xivdb.com/item/' + ranDom(item.id) );
         console.log(encodedURI);
 
 
         return axios.get(encodedURI)
             .then(function (response) {
-                return response.data.items;
+                console.log(response.data);
+                return response.data;
             });
      }
 };

@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-var api = require('../utils/api.js');
+const api = require('../utils/api');
 
 function SelectItem (props) {
-    var items = ['All', 'Item', 'Item2', 'Item3'];
+    var items = ['All']
     
     return (
         <ul className='languages'>
-            {items.map(function (item) {
-                return (
-                    <li
-                        style={item === props.selectedItem ? {color: '#d0021b'} : null}
-                        onClick={props.onSelect.bind(null, item)}
-                        key={item}>
-                        {item}
-                    </li>
-                )
-            })}
+            <button>Random Item</button>
         </ul>
     )
 }
@@ -26,7 +17,8 @@ function ItemGrid (props) {
         <ul>
             {props.items.map(function(item, index) {
                 return (
-                    <li key={item.name}>
+                    <li key={item.name_en}>
+                        {item.name_en}
                     </li>
                 )
             })}
@@ -34,13 +26,15 @@ function ItemGrid (props) {
     )
 }
 
-class FFViewer extends Component {
+export default class FFViewer extends Component {
     constructor(props) {
         super();
         this.state = {
             selectedItem: 'All',
             items: null,
         }
+
+        this.updateItem
     }
 
     componentDidMount() {
@@ -55,13 +49,13 @@ class FFViewer extends Component {
             }
         })
 
-        api.fetchRandomItem(item)
+        api.fetchItems(item)
             .then(function(items) {
                 this.setState(function() {
                     return {
                         items
                     }
-                });
+                })
             }.bind(this));
     }
 
@@ -79,4 +73,3 @@ class FFViewer extends Component {
     }
 }
 
-export default FFViewer;

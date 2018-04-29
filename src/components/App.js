@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-var FFViewer = require('./FFViewer');
+import FFViewer from './FFViewer';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class App extends Component {
   }
 }
 
-export default App;
+
