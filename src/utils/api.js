@@ -8,6 +8,7 @@ const axios = require('axios')
 
 module.exports = {
     fetchItems: function (item) {
+        // Will use this when applying random item and enemy grabbing
         // var encodedURI = window.encodeURI('https://api.xivdb.com/item/' + ranDom() );
         // console.log(encodedURI);
         return axios.get('https://api.xivdb.com/item/')

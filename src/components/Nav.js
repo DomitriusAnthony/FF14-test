@@ -11,7 +11,7 @@ export default function Nav () {
         <ul>
             <NavLink style={navStyle} to="/">Home</NavLink>
             <NavLink style={navStyle} to="/items">Items</NavLink>
-            <NavLink style={navStyle} to="/characters">Enemies</NavLink>
+            <NavLink style={navStyle} to="/enemies">Enemies</NavLink>
         </ul>
     )
 }
