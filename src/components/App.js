@@ -16,7 +16,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/items' component={Items} />
-            <Route path='/characters' component={Enemies} />
+            <Route path='/enemies' component={Enemies} />
           </Switch>
         </div>
       </Router>
