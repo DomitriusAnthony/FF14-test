@@ -18,7 +18,7 @@ function Grid (props) {
 
 
 export default class Enemies extends Component {
-    constructor() {
+    constructor(props) {
         super();
 
         this.state = {
@@ -53,7 +53,7 @@ export default class Enemies extends Component {
     render() {
         return (
             <div>
-                {!this.state.enemis
+                {!this.state.enemies
                     ? <p>Loading</p>
                     : <Grid 
                         enemies={this.state.enemies}
